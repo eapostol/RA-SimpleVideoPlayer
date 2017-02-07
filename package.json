@@ -1,0 +1,42 @@
+{
+  "name": "ra-simplevideoplayer",
+  "version": "1.0.0",
+  "description": "Red Academy - Simple Video Player Demo with Playlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eapostol/RA-SimpleVideoPlayer.git"
+  },
+  "keywords": [
+    "Red",
+    "Academy",
+    "Video",
+    "Player",
+    "video",
+    "HTML",
+    "CSS",
+    "Javascript"
+  ],
+  "author": "Edward J. Apostol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eapostol/RA-SimpleVideoPlayer/issues"
+  },
+  "homepage": "https://github.com/eapostol/RA-SimpleVideoPlayer#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "file-loader": "^0.10.0",
+    "gulp": "^3.9.1",
+    "node-libs-browser": "^2.0.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
