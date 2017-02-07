@@ -6,21 +6,54 @@ export default class VideoPlayer{
 
     constructor(){
         this.player = document.getElementById("video_player");
-        this.links = this.player.getElementsByTagName('a');
-        this.videotarget = "";
-        this.fileName = "";
-        this.video = null;
-        this.source = "";
-        this.initLinks(this.links);
+        this.video = this.player.getElementsByTagName("video")[0];
+
+        // this.links = this.player.getElementsByTagName('a');
+        this.links = this.player.getElementsByTagName("figcaption")[0]; // there is only one figcaption
+
+        this.linkList = []; // create an array of links
+        this.path = "";
+        this.currentVid = 0;
+        this.allLinks = this.links.children;
+        this.numLinks = this.allLinks.length;
+
+
+        //this.videotarget = "";
+        //this.fileName = "";
+
+        this.source = this.video.getElementsByTagName("source");
+
+        //this.initLinks(this.links);
+
+        this.video.removeAttribute("controls");
+        this.video.removeAttribute("poster");
+
+        this.initPlayList(this);
     }
 
+    initPlayList(thisScope){
+
+        let playVid = (index) =>{
+            thisScope.links.children[index].classList.add(thisScope.currentVid);
+            thisScope.source[0].src = this.linkList[index];
+
+        }
+
+
+    }
+
+
+
+    /*
     initLinks(links){
         for (let i=0; i<links.length; i++) {
             // this.links[i].onclick = handler;
             (links[i]).addEventListener("click",this.linkHandler,false)
         }
     }
+    */
 
+    /*
     linkHandler(e){
         // e.stopPropagation();
         e.preventDefault();
@@ -36,4 +69,5 @@ export default class VideoPlayer{
         this.video.load();
         this.video.play();
     }
+    */
 }
