@@ -61,7 +61,7 @@ module.exports = {
         src: join(PATHS.src, 'index.js')
     },
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['.js']
     },
     output: {
         path: process.cwd(),
@@ -77,7 +77,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel',
+                // note: loader: 'babel' no longer valid change to babel-loader
+                loader: 'babel-loader',
                 include: PATHS.src,
                 exclude: /node_modules/
             },
@@ -94,7 +95,7 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        progress: true,
+        // progress: true, // no longer valid in latest webpack :(
 
         // display only errors to reduce the amount of output
         stats: 'errors-only',
