@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./dist/style.css">
     <script>
 
-
         class VideoPlayer extends Object {
             constructor(videoFigureTag,videoTag,sourceTag,getAllAnchors){
                 super();
@@ -20,15 +19,11 @@
                 e.preventDefault();
 
                 let video = this.videoTag;
-                console.log(this);
-                console.log(video);
-                console.log(this.sourceTag);
-                debugger;
                 video.removeAttribute("controls");
                 video.removeAttribute("poster");
 
-                let currentElement = e.target; // img
-                let currentLink = e.target.parentElement; // anchor
+                let currentElement = e.target;
+                let currentLink = e.target.parentElement;
                 console.log(currentLink);
                 let currentHref = currentLink.getAttribute("href");
                 let source = this.sourceTag;
@@ -39,56 +34,18 @@
             }
         }
 
-        let es6Playground = () => {
-            const PI = Math.PI;
-            console.log(PI);
-            //PI = 4;
-            //console.log(PI);
-
-            //const a = 2;
-            //const multiply = num => num * a;
-            //let choice = "";
-            //let result = (a==5?choice='ok':choice='not ok');
-            //console.log(choice);
-            //console.log(multiply(3));
-
-            const numbers = [1,2,3,4];
-            //let doubleFn = (num) => {
-            //    return num * 2;
-            //};
-            const doubled = numbers.map( num => num*2  );
-            console.log(doubled);
-
-            // debugger;
-        };
-
         let onReady =  (e) => {
-
-            // es6Playground();
-
-
             let videoFigureTag = document.getElementById('video_player');
             let videoTag = document.querySelector("#video_player video");
             let sourceTag = document.querySelectorAll("#video_player video source");
-
-            let getAnchors = document.getElementsByTagName("a");
-            // or more specific...
             let getAllAnchors = document.querySelectorAll("#video_player figcaption a");
-            console.log(videoTag);
-            debugger;
             let videoPlayer = new VideoPlayer(videoFigureTag,videoTag,sourceTag,getAllAnchors);
 
             for (let ai = 0; ai<videoPlayer.allAnchors.length; ai++){
                 let currentAnchors = videoPlayer.allAnchors;
-                console.log(currentAnchors[ai].getAttribute("href"));
-                // debugger;
                 let currentAnchor = currentAnchors[ai];
-                console.log(ai);
-                console.log(currentAnchor);
                 currentAnchor.addEventListener("click",videoPlayer.onAnchorClick.bind(videoPlayer),false);
             }
-
-
 
         };
 
