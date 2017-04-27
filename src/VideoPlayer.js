@@ -24,15 +24,19 @@ export default class VideoPlayer{
     linkHandler(e){
         // e.stopPropagation();
         e.preventDefault();
+        console.log(this);
+        console.log(this.fileName);
+        debugger;
         this.videotarget = this.getAttribute("href");
         this.fileName = this.videotarget.substr(0, this.videotarget.lastIndexOf('.')) || this.videotarget;
+
         this.video = document.querySelector("#video_player video");
         this.video.removeAttribute("controls");
         this.video.removeAttribute("poster");
 
         this.source = document.querySelectorAll("#video_player video source");
         this.source[0].src = this.fileName + ".mp4";
-        this.source[1].src = this.fileName + ".webm";
+        // this.source[1].src = this.fileName + ".webm";
         this.video.load();
         this.video.play();
     }
