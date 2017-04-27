@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Class</title>
+    <script>
+
+        class Car extends Object {
+            constructor(color = "red"){
+                super();
+
+                this.type = "";
+                this.color = color;
+                this.manufacturer = "Ford";
+                this.year = 2017;
+                this.transmission = "automatic";
+                this.model = "Focus";
+            }
+
+            startTheCar(){
+                let x = () => { console.log("I am started"); };
+                x();
+            }
+
+            get engineType(){
+                return "its a V8! it's 1972!";
+            }
+            /*
+            * set engineType(typeOfEngine){
+            *   this.engineType = typeOfEngine;
+            * }
+            * */
+        }
+
+        let samsCar = new Car("yellow");
+        console.log(samsCar);
+        console.log(samsCar.color);
+        samsCar.color = "blue";
+        console.log(samsCar.color);
+        let jessesCar = new Car();
+        console.log(jessesCar.color);
+        console.log(jessesCar.engineType);
+        jessesCar.engineType = "V6";
+        console.log( jessesCar.engineType );
+        jessesCar.startTheCar();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
