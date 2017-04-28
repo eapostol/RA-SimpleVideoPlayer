@@ -11,12 +11,12 @@ class VideoPlayer extends Object {
 
     createPlayer(){
         let playerComponent = document.createDocumentFragment();
-
+        // create the elements
         this.createVideoFigureTag(playerComponent);
         this.createVideoTag(playerComponent);
         this.createSourceTags(playerComponent);
         this.createAnchorTags(playerComponent);
-        console.log(playerComponent);
+        // create the videoplayer properties
         this.videoFigureTag = playerComponent.querySelector("#video_player");
         this.videoTag = playerComponent.querySelector("#video_player video");
         this.sourceTag = playerComponent.querySelectorAll("#video_player video source");
