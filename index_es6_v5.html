@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Video Player</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <!-- <script src="./src/main_es6_v4.js"></script> -->
+    <script>
+        // this is ES6. but it will fail.
+
+        import VideoPlayerX from './src/VideoPlayerX';
+
+        let onReady =  (e) => {
+            let videoPlayer = new VideoPlayerX();
+        };
+
+        window.addEventListener("load",onReady,false);
+    </script>
+</head>
+<body>
+<h1>Welcome to My Video Player</h1>
+
+</body>
+</html>
+

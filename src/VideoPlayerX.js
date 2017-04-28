@@ -1,7 +1,7 @@
 /**
  * Created by Edward_J_Apostol on 2017-04-27.
  */
-class VideoPlayer extends Object {
+export class VideoPlayerX extends Object {
     constructor(videoFigureTag,videoTag,sourceTag,getAllAnchors){
         super();
         this.createPlayer();
@@ -105,8 +105,3 @@ class VideoPlayer extends Object {
     }
 }
 
-let onReady =  (e) => {
-    let videoPlayer = new VideoPlayer();
-};
-
-window.addEventListener("load",onReady,false);
