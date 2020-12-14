@@ -5,6 +5,12 @@
     <title>Simple Class</title>
     <script>
 
+        /*
+        * This demonstration file illustrates using the class keyword in ES6
+        * Understanding the class keyword will help understand how to
+        * create instances of objects
+        * */
+
         class Car extends Object {
             constructor(color = "red"){
                 super();
@@ -32,17 +38,18 @@
             * */
         }
 
-        let samsCar = new Car("yellow");
-        console.log(samsCar);
-        console.log(samsCar.color);
-        samsCar.color = "blue";
-        console.log(samsCar.color);
-        let jessesCar = new Car();
-        console.log(jessesCar.color);
-        console.log(jessesCar.engineType);
-        jessesCar.engineType = "V6";
-        console.log( jessesCar.engineType );
-        jessesCar.startTheCar();
+        let Sams_car = new Car("yellow");
+        console.log(Sams_car);
+        console.log(Sams_car.color);
+        Sams_car.color = "blue";
+        console.log(Sams_car.color);
+
+        let Jesses_car = new Car();
+        console.log(Jesses_car.color);
+        console.log(Jesses_car.engineType);
+        Jesses_car.engineType = "V6";
+        console.log( Jesses_car.engineType );
+        Jesses_car.startTheCar();
 
 
     </script>
